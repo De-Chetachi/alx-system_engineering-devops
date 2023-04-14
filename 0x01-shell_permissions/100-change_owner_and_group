@@ -1,2 +1,2 @@
 #!/bin/bash
-chown --quiet vincent :staff /*
+chown --quiet vincent:staff ~/* | ls -l 

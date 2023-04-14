@@ -1,2 +1,2 @@
 #!/bin/bash
-su chmod a+X /*
+su chmod a+X ~/*
