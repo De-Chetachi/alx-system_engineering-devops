@@ -1,1 +1,3 @@
-0; echo '"Hello, World”'  prints “Hello, World”
+0; echo "Hello, World\n”  prints Hello, World and a new line
+1; echo "(Ôo)' prints "(Ôo)'
+
