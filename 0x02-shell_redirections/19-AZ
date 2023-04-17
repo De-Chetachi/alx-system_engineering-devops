@@ -1,2 +1,2 @@
 #!/bin/bash
-replace a z c e
+tr 'a' 'z' | tr 'c' 'e'
