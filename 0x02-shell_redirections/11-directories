@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Ap | grep -l "*/" | wc -l
+ls -RAp | grep -l "*/" | wc -l
