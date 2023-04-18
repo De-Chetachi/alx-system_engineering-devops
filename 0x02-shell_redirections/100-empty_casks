@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -Ra |tr "" "" | find -empty
+ls -Rta |tr "" "" | find -empty
