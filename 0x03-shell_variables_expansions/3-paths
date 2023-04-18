@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(( $(whereis ls | tr -c -d ':' | wc -c )))
+echo $PATH | tr ':' '\n' | wc -l
