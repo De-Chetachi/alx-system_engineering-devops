@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -iv "c"
+tr -d "[cC]"
