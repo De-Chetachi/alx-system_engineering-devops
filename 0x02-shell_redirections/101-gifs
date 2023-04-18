@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la | find -type f | tr -d  ".*"
+ls -lSa | find -type f | tr -d  ".*" | sort -f
