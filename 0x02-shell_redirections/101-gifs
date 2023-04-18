@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lSa | find -type f | tr -d  ".*" | sort -f
+ls -RSa | find -type f -name "*.gif" | tr -d  ".gif" | sort -f
