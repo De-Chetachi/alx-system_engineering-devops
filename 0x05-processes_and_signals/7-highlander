@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#I am invincible!!! when receiving a SIGTERM signal
 
 trap highlander SIGTERM
 
