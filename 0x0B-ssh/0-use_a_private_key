@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # uses ssh to connect to your server using the private key
-
-cat ~/.ssh/school.pub | ssh ubuntu@localhost "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+ssh-copy-id -i ~/.ssh/school.pub ubuntu@localhost
+ssh -i ~/.ssh/school ubuntu@localhost
+#cat ~/.ssh/school.pub | ssh ubuntu@localhost "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
