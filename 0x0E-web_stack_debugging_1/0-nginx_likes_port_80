@@ -2,5 +2,12 @@
 #make nginx listen on port 80
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo sed -i '35r /dev/stdin' /etc/nginx/sites-available/default <<< "                return 200;"
+sudo sed -i '26r /dev/stdin' /etc/nginx/sites-available/default <<< "        location /usr/share/nginx/html {
+                return 200;
+	}"
 sudo service nginx start
+location /usr/share/nginx/html {
+                return 200;
+        }
+
+        location / {
