@@ -37,6 +37,6 @@ echo "server {
 
 	add_header X-Served-By $(hostname);
 
-	}" > /etc/nginx/sites-enabled/default
+}" > /etc/nginx/sites-enabled/default
 sudo service nginx restart
 
