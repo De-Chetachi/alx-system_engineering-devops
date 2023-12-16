@@ -3,7 +3,6 @@
 
 sudo apt-get -y update
 sudo apt install -y haproxy
-sudo service start haproxy
 echo "global
         log /dev/log    local0
         log /dev/log    local1 notice
@@ -41,5 +40,5 @@ backend web
 	balance roundrobin
 	server web-01 35.153.93.19:80 check
 	server web-02 54.172.31.233:80 check" > /etc/haproxy/haproxy.cfg
-
-sudo service restart haproxy
+sudo systemctl enable haproxy
+sudo systemctl restart haproxy
