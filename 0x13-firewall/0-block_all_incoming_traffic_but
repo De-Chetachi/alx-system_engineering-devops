@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#install ufw
+#block all  incoming traffic
+#except ssh, http, https
+
+#sudo apt install ufw; already installed
+#sudo ufw disable;
+#sudo ufw default deny incoming
+#sudo ufw default allow outgoing
+sudo su #to get root priviledges
+apt-get update
+apt upgrade
+ufw allow ssh
+ufw allow http
+ufw allow https
+ufw enable
+#delete Nginx http rule
+#ufw status numbered; to check
