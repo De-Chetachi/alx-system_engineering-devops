@@ -16,7 +16,7 @@ file { '/var/www/html/index.html':
 }
 
 file { '/var/www/html/custom_404.html':
-  content => 'Ceci n'est pas une page',
+  content => "Ceci n'est pas une page",
 }
 
 exec { 'hostname':
@@ -28,7 +28,7 @@ file_line { 'x-server-by':
   path =>'/etc/nginx/sites-available/default',
   ensure => present,
   after => "listen [::]:80 default_server ipv6only=on;",
-  line => 'X-Server-By $(hostname)'],
+  line => 'X-Server-By $(hostname)',
 }
 
 service { 'nginx':
