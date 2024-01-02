@@ -3,10 +3,9 @@
 my_func ()
 {
 	domain=$1
-	subdomain=$2
-	sub=$(echo "$subdomain" | awk -F"." '{print $1}')
-	record=$(dig "$subdomain" | grep "^$subdomain\b" | awk '{print $4}')
-	dest=$(dig "$subdomain" | grep "^$subdomain\b" | awk '{print $5}')
+	sub=$2
+	record=$(dig "$sub.$domain" | grep "^$sub.$domain\b" | awk '{print $4}')
+	dest=$(dig "$sub.$domain" | grep "^$sub.$domain\b" | awk '{print $5}')
 	echo "The subdomain ""$sub"" is a ""$record"" record and points to ""$dest"""
 	return 0
 }
