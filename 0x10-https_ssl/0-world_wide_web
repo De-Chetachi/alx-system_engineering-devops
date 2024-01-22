@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#
+my_func ()
+{
+	domain=$1
+	sub=$2
+	record=$(dig "$sub.$domain" | grep "^$sub.$domain\b" | awk '{print $4}')
+	dest=$(dig "$sub.$domain" | grep "^$sub.$domain\b" | awk '{print $5}')
+	echo "The subdomain ""$sub"" is a ""$record"" record and points to ""$dest"""
+	return 0
+}
+func ()
+{
+	subs=("www" "lb-01" "web-01" "web-02")
+	for sub in "${subs[@]}";
+	do
+		domain=$1
+		record=$(dig "$sub.$domain" | grep "^$sub.$domain\b" | awk '{print $4}')
+		dest=$(dig "$sub.$domain" | grep "^$sub.$domain\b" | awk '{print $5}')
+		echo "The subdomain ""$sub"" is a ""$record"" record and points to ""$dest"""
+	done
+	return 0
+}
+
+if [ "$#" -eq 2 ] 
+then
+	my_func "$1" "$2"
+else
+	func "$1"
+fi
