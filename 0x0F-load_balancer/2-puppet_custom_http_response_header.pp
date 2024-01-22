@@ -1,22 +1,17 @@
 #using puppet automate the task of creating a custom HTTP header response
 
 package { 'nginx':
-  ensure => installed,
-}
-
-exec { 'hostname':
-  command => '/usr/bin/hostname',
-  logoutput => true,
+  ensure => 'installed',
 }
 
 file_line { 'x-served-by':
   path   =>'/etc/nginx/sites-available/default',
   ensure => 'present',
-  after  => "listen [::]:80 default_server ipv6only=on;",
-  line   => 'X-Served-By $(hostname)',
+  after  => "server_name _;",
+  line   => '\tadd header X-Served-By $(hostname);',
 }
 
 service { 'nginx':
-  ensure  => running,
+  ensure  => 'running',
   require => Package['nginx'],
 }
