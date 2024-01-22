@@ -9,11 +9,11 @@ exec { 'hostname':
   logoutput => true,
 }
 
-file_line { 'x-server-by':
+file_line { 'x-served-by':
   path   =>'/etc/nginx/sites-available/default',
   ensure => 'present',
   after  => "listen [::]:80 default_server ipv6only=on;",
-  line   => 'X-Server-By $(hostname)',
+  line   => 'X-Served-By $(hostname)',
 }
 
 service { 'nginx':
