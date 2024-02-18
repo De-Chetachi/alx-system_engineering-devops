@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# change user then run the whoami
+
+user=$1
+su -c whoami  ${user}
+#whoami 
