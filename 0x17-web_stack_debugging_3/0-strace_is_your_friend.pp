@@ -6,8 +6,8 @@ file { '/var/www/html/wp-settings.php':
 }
 
 exec { 'restartApache':
-  command     => 'initctl restart apache2',
+  command	=> 'initctl restart apache2',
   path	=> '/sbin:/usr/sbin:/bin',
-  refreshonly => true,
-  subscribe   => File['/var/www/html/wp-settings.php'],
+  refreshonly	=> true,
+  subscribe	=> File['/var/www/html/wp-settings.php'],
 }
