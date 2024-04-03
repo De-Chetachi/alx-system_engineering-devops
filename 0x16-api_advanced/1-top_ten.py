@@ -24,4 +24,5 @@ def top_ten(subreddit):
         sr_data = sr.json()['data']['children']
         for child in sr_data:
             print(child['data']['title'])
-    print('None')
+    else:
+        print('None')
