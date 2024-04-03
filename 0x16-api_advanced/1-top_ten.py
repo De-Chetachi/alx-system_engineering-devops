@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 '''this module contains a function that queries the reddit api'''
 import requests
-import sys
 
 
 def top_ten(subreddit):
