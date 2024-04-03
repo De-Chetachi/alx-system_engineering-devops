@@ -17,7 +17,7 @@ def top_ten(subreddit):
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
             }
     base_url = 'https://www.reddit.com'
-    sr_url = '{}/r/{}/hot/.json?limit=9'.format(base_url, subreddit)
+    sr_url = '{}/r/{}/.json?sort={}&limit=9'.format(base_url, subreddit, 'top')
 
     sr = requests.get(sr_url, headers=header, allow_redirects=False)
     if sr.status_code == 200:
